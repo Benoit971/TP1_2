@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         affichage=(TextView) findViewById(R.id.affichage);
+
+        //code pour rotation d'écran partie 1
         if (savedInstanceState!=null) {
             nombre1 = (double) savedInstanceState.getDouble("nombre11");
             nombre2 = (double) savedInstanceState.getDouble("nombre21");
@@ -46,7 +48,10 @@ public class MainActivity extends AppCompatActivity {
             nombre="";
             chif_mem_S="";
         }
-        affichage.setText(nombre);
+        affichage.setText(nombre);// ne pas oublier de reafficher l'écran
+        //fin de la partie 1 de la rotation
+
+
     }
     public void chiffre(View view){
         if (nett_ecran){
@@ -115,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
         }
         chif_mem_S=Double.toString(mem);
     }
+
+    //Permet de faire la rotation d'écran partie 2 (sauvegarder toute les donnéee dans des clés /valeurs)
     protected void onSaveInstanceState(Bundle saveInstanceState) {
         super.onSaveInstanceState(saveInstanceState);
         saveInstanceState.putDouble("nombre11", nombre1);
